@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<body>
+<p style="font-size:20pt;">This is web view</p>
+<input id="inputField" style="height:50px;width:300px;font-size:20pt;" type="text" value="">
+<br><br>
+<input onClick="sendMessage()" style="height:50px;width:300px;font-size:20pt;" type="button"
+       value="Send data to native"/>
+
+<script type="text/javascript">
+    function sendMessage() {
+		var valueReceived =  document.getElementById("inputField").value;
+        JSBridge.showMessageInNative(valueReceived);
+    }
+    function updateFromNative(message){
+		document.getElementById("inputField").value = message;
+    }
+</script>
+<style>
+	body {
+	background-color: #93B874
+	}
+</style>
+</body>
+</html>
